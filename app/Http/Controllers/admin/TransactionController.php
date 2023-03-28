@@ -50,7 +50,7 @@ public function index()
         $today = Carbon::now()->format('Y-m-d');
 
 
-        $data =deposit::orderBy('id', 'desc')->paginate(25);
+        $data =deposit::orderBy('id', 'desc')->paginate(100);
         $tt = deposit::count();
         $ft = deposit::where([['date', 'like', Carbon::now()->format('Y-m-d') . '%']])->count();
         $st = deposit::where([['date', 'like', Carbon::now()->subDay()->format('Y-m-d') . '%']])->count();
@@ -69,7 +69,7 @@ public function index()
         $today = Carbon::now()->format('Y-m-d');
 
 
-        $data =bill_payment::orderBy('id', 'desc')->get();
+        $data =bill_payment::orderBy('id', 'desc')->paginate(100);
         $tt = bill_payment::count();
         $ft = bill_payment::where([['timestamp', 'like', Carbon::now()->format('Y-m-d') . '%']])->count();
         $st = bill_payment::where([['timestamp', 'like', Carbon::now()->subDay()->format('Y-m-d') . '%']])->count();

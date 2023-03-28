@@ -19,6 +19,8 @@
         </div>
     </div>
     <!-- Container-fluid starts-->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
     <div class="container-fluid default-dash">
         <div class="row">
             <div class="col-xl-6 xl-100 box-col-12">
@@ -209,7 +211,7 @@
                                                 <span class="badge badge-success">Delivered</span>
                                             @elseif($dat->status=="0")
                                                 <span class="badge badge-warning" >Not-Delivered</span>
-                                                <a href="done/{{$dat->id}}" class="badge-success text-white">Approve</a>
+                                                <a href="done/{{$dat->id}}" class="badge badge-success">Approve</a>
                                             @else
                                                 <span class="badge badge-info">{{$dat->status}}</span>
                                             @endif
@@ -242,6 +244,7 @@
                                 </tr>
                                 </tfoot>
                             </table>
+                            {{ $data->links() }}
                         </div>
                     </div>
                 </div>
