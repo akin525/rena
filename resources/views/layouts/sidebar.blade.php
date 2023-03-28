@@ -151,7 +151,7 @@
                             <li><a href="email-application.html"><i data-feather="mail"></i><span>Inbox</span></a></li>
                             <li><a href="kanban.html"><i data-feather="file-text"></i><span>Taskboard</span></a></li>
                             <li><a href="edit-profile.html"><i data-feather="settings"></i><span>Settings</span></a></li>
-                            <li><a href="login.html"><i data-feather="log-in"> </i><span>Log in</span></a></li>
+                            <li><a href="{{ route('logout') }}"><i data-feather="log-out"> </i><span>Log out</span></a></li>
                         </ul>
                     </li>
                 </ul>

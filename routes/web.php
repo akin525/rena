@@ -50,8 +50,14 @@ Route::middleware('auth')->group(function () {
     Route::post('state1', [UserStatementController::class, 'customerstatementpurchase'])->name('state1');
     Route::post('state', [UserStatementController::class, 'customerstatementfunding'])->name('state');
 
-
+//Approve transcation
+    Route::get('done/{id}', [\App\Http\Controllers\Marktransaction::class, 'accepttransaction'])->name('admin/done');
 
 });
 
+Route::get('/logout', function(){
+    Auth::logout();
+//    Alert::success('Logout Successful');
+    return redirect('login')->with('status', 'logout successful');
+});
 require __DIR__.'/auth.php';
