@@ -10,6 +10,7 @@ use App\Models\charp;
 use App\Models\deposit;
 use App\Models\Messages;
 use App\Models\refer;
+use App\Models\safe_lock;
 use App\Models\server;
 use App\Models\User;
 use App\Models\wallet;
@@ -75,18 +76,19 @@ $wallet=wallet::where('username', $username)->first();
         $user =User::where('username', $username)->first();
         $sumtt = deposit::where('username', $ap->username)->sum('amount');
         $tt = deposit::where('username', $ap->username)->count();
-        $td = deposit::where('username', $ap->username)->orderBy('id', 'desc')->paginate(10);
-        $v = DB::table('bill_payments')->where('username', $ap->username)->orderBy('id', 'desc')->paginate(25);
+        $td = deposit::where('username', $ap->username)->orderBy('id', 'desc')->paginate(30);
+        $v = DB::table('bill_payments')->where('username', $ap->username)->orderBy('id', 'desc')->paginate(30);
        $referrals = refer::where('username', $ap->usernamer)->get();
         $tat = bill_payment::where('username', $ap->username)->count();
         $sumbo = bill_payment::where('username', $ap->username)->sum('amount');
         $sumch = charge::where('username', $ap->username)->sum('amount');
-        $charge = charge::where('username', $ap->username)->paginate(10);
+        $charge = charge::where('username', $ap->username)->paginate(30);
         $cname=encription::decryptdata($user->name);
         $cphone=encription::decryptdata($user->phone);
         $cmail=encription::decryptdata($user->email);
+        $lock=safe_lock::where('username', $ap->username)->orderBy('id', 'desc')->paginate(30);
 //return $user;
-        return view('admin/profile', ['user' => $ap, 'sumtt'=>$sumtt, 'charge'=>$charge,  'sumch'=>$sumch, 'sumbo'=>$sumbo, 'tt' => $tt, 'wallet'=>$wallet, 'td' => $td, 'cphone'=>$cphone, 'cname'=>$cname, 'cmail'=>$cmail,  'referrals' => $referrals, 'version' => $v,  'tat' =>$tat]);
+        return view('profile', ['user' => $ap, 'sumtt'=>$sumtt, 'charge'=>$charge, 'lock'=>$lock,  'sumch'=>$sumch, 'sumbo'=>$sumbo, 'tt' => $tt, 'wallet'=>$wallet, 'td' => $td, 'cphone'=>$cphone, 'cname'=>$cname, 'cmail'=>$cmail,  'referrals' => $referrals, 'version' => $v,  'tat' =>$tat]);
     }
     public function server()
     {

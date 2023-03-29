@@ -7,7 +7,9 @@ use App\Http\Controllers\admin\UsersController;
 use App\Http\Controllers\admin\UserStatementController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use RealRashid\SweetAlert\Facades\Alert;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,11 +55,15 @@ Route::middleware('auth')->group(function () {
 //Approve transcation
     Route::get('done/{id}', [\App\Http\Controllers\Marktransaction::class, 'accepttransaction'])->name('admin/done');
 
+
+//    user details
+    Route::get('admin/profile/{username}', [UsersController::class, 'profile'])->name('admin/profile');
+
 });
 
 Route::get('/logout', function(){
     Auth::logout();
-//    Alert::success('Logout Successful');
+    Alert::success('Logout Successful');
     return redirect('login')->with('status', 'logout successful');
 });
 require __DIR__.'/auth.php';

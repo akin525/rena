@@ -222,7 +222,7 @@
                                         <td>{{$dat->product}}</td>
                                         <td>{{$dat->transactionid}}</td>
                                         <td>{{$dat->timestamp}}</td>
-                                        <td><a href="profile/{{ $dat->username }}" class="btn btn-sm btn-success"><i class="fa fa-edit"></i></a></td>
+                                        <td><a href="admin/profile/{{ $dat->username }}" class="btn btn-sm btn-success"><i class="fa fa-edit"></i></a></td>
                                     </tr>
                                     @endforeach
                                 </tbody>

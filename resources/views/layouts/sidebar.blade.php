@@ -218,6 +218,14 @@
                                     <li><a href="/statement1">Bills Statement</a></li>
                                 </ul>
                             </li>
+                            <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="#">
+                                  <i style="width: 24px; height: 24px" class="fa fa-money"></i>
+                                    <span>Fund/Charge</span></a>
+                                <ul class="sidebar-submenu">
+                                    <li><a href="/bills">Fund User</a></li>
+                                    <li><a href="/statement1">Charge User</a></li>
+                                </ul>
+                            </li>
                             <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav" href="support-ticket.html">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <g>
