@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\admin\AdminpdfController;
+use App\Http\Controllers\admin\CandCController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\TransactionController;
 use App\Http\Controllers\admin\UsersController;
@@ -58,6 +59,34 @@ Route::middleware('auth')->group(function () {
 
 //    user details
     Route::get('admin/profile/{username}', [UsersController::class, 'profile'])->name('admin/profile');
+
+//    credit users
+    Route::get('credit', [CandCController::class, 'cr'])->name('credit');
+    Route::post('cr', [CandCController::class, 'credit'])->name('cr');
+
+//    charge users
+    Route::post('ch', [CandCController::class, 'charge'])->name('ch');
+    Route::get('charge', [CandCController::class, 'sp'])->name('charge');
+
+//    Product route
+    Route::get('product', [productController::class, 'index'])->name('product');
+    Route::get('product1', [productController::class, 'index1'])->name('product1');
+    Route::get('product2', [productController::class, 'index2'])->name('product2');
+    Route::post('do', [ProductController::class, 'edit'])->name('do');
+    Route::post('do1', [ProductController::class, 'edit1'])->name('do1');
+    Route::post('do2', [ProductController::class, 'edit2'])->name('do2');
+    Route::get('editproduct1/{id}', [ProductController::class, 'in1'])->name('editproduct1');
+    Route::get('editproduct2/{id}', [ProductController::class, 'in2'])->name('editproduct2');
+    Route::get('editproduct/{id}', [ProductController::class, 'in'])->name('editproduct');
+    Route::get('pd/{id}', [ProductController::class, 'on'])->name('pd');
+    Route::get('pd1/{id}', [ProductController::class, 'on1'])->name('pd1');
+    Route::get('pd2/{id}', [ProductController::class, 'on2'])->name('pd2');
+
+//    All Deposit
+    Route::get('deposits', [TransactionController::class, 'in'])->name('deposits');
+    Route::get('finddeposite', [TransactionController::class, 'index'])->name('finddeposite');
+    Route::post('depo', [TransactionController::class, 'finduser'])->name('depo');
+
 
 });
 

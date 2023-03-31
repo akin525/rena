@@ -222,8 +222,17 @@
                                   <i style="width: 24px; height: 24px" class="fa fa-money"></i>
                                     <span>Fund/Charge</span></a>
                                 <ul class="sidebar-submenu">
-                                    <li><a href="/bills">Fund User</a></li>
-                                    <li><a href="/statement1">Charge User</a></li>
+                                    <li><a href="/credit">Fund User</a></li>
+                                    <li><a href="/charge">Charge User</a></li>
+                                </ul>
+                            </li>
+                            <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="#">
+                                  <i style="width: 24px; height: 24px" class="fa fa-shopping-cart"></i>
+                                    <span>Products</span></a>
+                                <ul class="sidebar-submenu">
+                                    <li><a href="/product">MCD</a></li>
+                                    <li><a href="/product1">HonorWold</a></li>
+                                    <li><a href="/product2">EASYACCESS</a></li>
                                 </ul>
                             </li>
                             <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav" href="support-ticket.html">

@@ -35,9 +35,9 @@
                                         @foreach($air as $seller)
                                         <tr>
                                             <td class="pills-component">@if($seller->server=="MCD")
-                                                    <img width="50" src="{{asset('tar.png')}}"/>
+                                                    <img width="50" src="{{asset('tar.png')}}" alt="#"/>
                                                 @else
-                                                    <img width="50" src="https://play-lh.googleusercontent.com/Cl5NJPMl2ISza-X56AZ5QfDKapZn-MdwbFakJLrRrL0mDEFsn-9YjuQH4zy-W2Cbs_8=w240-h480-rw"/>
+                                                    <img width="50" src="https://play-lh.googleusercontent.com/Cl5NJPMl2ISza-X56AZ5QfDKapZn-MdwbFakJLrRrL0mDEFsn-9YjuQH4zy-W2Cbs_8=w240-h480-rw" alt="#"/>
                                                 @endif
                                                     {{$seller->server}} </td>
                                             <td class="w-50">

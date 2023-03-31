@@ -23,17 +23,16 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="row">
-                        <!-- col-md-6 -->
+                    <div class="row">                        <!-- col-md-6 -->
                         <div class="col-md-12 col-12">
 
                             <div class="form-group">
-                                <div class="contact-thumb card-body">
+                                <div class="cont  act-thumb card-body">
                                     <h1><i class="fa i-cl-4 fa-money"></i></h1>
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <form action="{{route('admin/cr')}}" method="post">
+                                <form action="{{route('cr')}}" method="post">
                                     @csrf
 
                                     @if (session('status'))

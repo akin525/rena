@@ -33,7 +33,7 @@
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <form action="{{route('admin/ch')}}" method="post">
+                                <form action="{{route('ch')}}" method="post">
                                     @csrf
 
                                     @if (session('status'))

@@ -27,9 +27,9 @@ class CandCController
                 $totalwallet += (int)$wall->balance;
 
             }
-            return view('admin/credit', compact('totalwallet'));
+            return view('credit', compact('totalwallet'));
         }
-        return redirect("admin/login")->with('status', 'You are not allowed to access');
+        return redirect("login")->with('status', 'You are not allowed to access');
 
 
     }
@@ -79,14 +79,14 @@ public function credit(Request $request)
 
         }
     }
-    return redirect("admin/login")->with('status', 'You are not allowed to access');
+    return redirect("login")->with('status', 'You are not allowed to access');
 
 
 }
 public function sp()
 {
     $ch=charp::get();
-    return view('admin/charge', compact('ch'));
+    return view('charge', compact('ch'));
 
 }
 public function charge(Request $request)
@@ -129,7 +129,7 @@ public function charge(Request $request)
         return redirect(route('admin/charge'));
 
     }
-    return redirect("admin/login")->with('status', 'You are not allowed to access');
+    return redirect("login")->with('status', 'You are not allowed to access');
 
 }
 

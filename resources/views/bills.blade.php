@@ -176,8 +176,8 @@
                         <h5>Bills Purchase Table</h5>
                     </div>
                     <div class="card-body">
-                        <div class="dt-ext table-responsive">
-                            <table class="display" id="export-button">
+                        <div class="table-responsive">
+                            <table class="table">
                                 <thead>
                                 <tr>
                                     <th>id</th>
