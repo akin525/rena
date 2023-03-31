@@ -16,19 +16,19 @@ public function index()
 {
     $product=data::paginate(50);
 
-    return view('admin/product', compact('product'));
+    return view('product', compact('product'));
 }
     public function index1()
     {
         $product=big::paginate(50);
 
-        return view('admin/product1', compact('product'));
+        return view('product1', compact('product'));
     }
     public function index2()
     {
         $product=easy::paginate(50);
 
-        return view('admin/product2', compact('product'));
+        return view('product2', compact('product'));
     }
 public function on(Request $request)
 {
@@ -43,7 +43,7 @@ public function on(Request $request)
     $product->save();
     Alert::success('Admin', 'Product update successfully');
 
-    return redirect('admin/product');
+    return redirect('product');
 
 }
     public function on1(Request $request)
@@ -59,7 +59,7 @@ public function on(Request $request)
         $product->save();
         Alert::success('Admin', 'Product update successfully');
 
-        return redirect('admin/product1');
+        return redirect('product1');
 
     }
     public function on2(Request $request)
@@ -75,7 +75,7 @@ public function on(Request $request)
         $product->save();
         Alert::success('Admin', 'Product update successfully');
 
-        return redirect('admin/product2');
+        return redirect('product2');
 
     }
 public function in(Request $request)
@@ -83,21 +83,21 @@ public function in(Request $request)
 
     $pro=data::where('id', $request->id)->first();
 
-return view('admin/editproduct', compact('pro'));
+return view('editproduct', compact('pro'));
 }
     public function in1(Request $request)
     {
 
         $pro=big::where('id', $request->id)->first();
 
-        return view('admin/editproduct1', compact('pro'));
+        return view('editproduct1', compact('pro'));
     }
     public function in2(Request $request)
     {
 
         $pro=easy::where('id', $request->id)->first();
 
-        return view('admin/editproduct2', compact('pro'));
+        return view('editproduct2', compact('pro'));
     }
 public function edit(Request $request)
 {
@@ -115,7 +115,7 @@ public function edit(Request $request)
     $pro->ramount=$request->ramount;
     $pro->save();
     Alert::success('Amin', 'Product update Successfully');
-    return redirect('admin/product');
+    return redirect('product');
 
 }
     public function edit1(Request $request)
@@ -134,7 +134,7 @@ public function edit(Request $request)
         $pro->ramount=$request->ramount;
         $pro->save();
         Alert::success('Admin', 'Product update successfully');
-        return redirect('admin/product1');
+        return redirect('product1');
 
     }
     public function edit2(Request $request)
@@ -153,7 +153,7 @@ public function edit(Request $request)
         $pro->ramount=$request->ramount;
         $pro->save();
         Alert::success('Admin', 'Product update successfully');
-        return redirect('admin/product2');
+        return redirect('product2');
 
     }
 

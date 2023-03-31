@@ -22,7 +22,7 @@
     <div class="container-fluid default-dash">
         <div class="row">
             <div class="col-md-12">
-                <div class="card">
+                <div class="card card-body">
                     <div class="row">
                         <!-- col-md-6 -->
                         <div class="col-md-12 col-12">

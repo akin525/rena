@@ -1,6 +1,7 @@
 @extends("layouts.sidebar")
 
 @section('content')
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <div class="container-fluid">
         <div class="page-title">
