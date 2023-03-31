@@ -126,7 +126,7 @@ public function charge(Request $request)
         Mail::to($admin)->send(new Emailcharges($charp));
         $mg=$request->amount . " was charge from " . $request->username . ' wallet successfully';
         Alert::success('Admin', $mg);
-        return redirect(route('admin/charge'));
+        return redirect(route('charge'));
 
     }
     return redirect("login")->with('status', 'You are not allowed to access');
