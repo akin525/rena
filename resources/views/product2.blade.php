@@ -72,7 +72,7 @@
                                             <label class="switch">
                                                 <input type="checkbox" name="status" value="0" id="myCheckBox"
                                                        {{$seller->status =="1"?'checked':''}}
-                                                       onclick="window.location='{{route('admin/pd2', $seller->id)}}'"/>
+                                                       onclick="window.location='{{route('pd2', $seller->id)}}'"/>
                                                 <span class="switch-state"></span>
 
                                                 <a></a>
