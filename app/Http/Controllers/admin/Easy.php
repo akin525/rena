@@ -11,7 +11,7 @@ class Easy extends Controller
     public function webook()
     {
         $web=web::orderBy('id', 'desc')->get();
-        return view('admin/look', compact('web'));
+        return view('look', compact('web'));
     }
 
     public function easybalance()

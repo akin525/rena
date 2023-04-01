@@ -16,7 +16,7 @@ public function index()
 {
     $all=deposit::paginate(50);
 
-    return view('admin/finddeposite', compact('all'));
+    return view('finddeposite', compact('all'));
 }
     public function finduser(Request $request)
     {
@@ -43,7 +43,7 @@ public function index()
             ->orWhere('date', 'LIKE', "%$date%")
             ->count();
 
-        return view('admin/finddeposite', ['datas' => $query, 'count' => $cquery, 'result' => true]);
+        return view('finddeposite', ['datas' => $query, 'count' => $cquery, 'result' => true]);
     }
     public function in(Request $request)
     {
@@ -61,7 +61,7 @@ public function index()
         $am2=deposit::where([['date', 'like', '%'. Carbon::now()->subDays(2)->format('y-m-d'). '%']])->sum('amount');
 
 
-        return view('admin/deposits', ['data' => $data,'amount'=>$amount, 'am'=>$am, 'am1'=>$am1, 'am2'=>$am2,  'tt' => $tt, 'ft' => $ft, 'st' => $st, 'rt' => $rt]);
+        return view('deposits', ['data' => $data,'amount'=>$amount, 'am'=>$am, 'am1'=>$am1, 'am2'=>$am2,  'tt' => $tt, 'ft' => $ft, 'st' => $st, 'rt' => $rt]);
 
     }
     public function bill()

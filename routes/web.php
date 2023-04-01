@@ -2,12 +2,15 @@
 
 use App\Http\Controllers\admin\AdminpdfController;
 use App\Http\Controllers\admin\CandCController;
+use App\Http\Controllers\admin\Easy;
+use App\Http\Controllers\admin\LockController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\TransactionController;
 use App\Http\Controllers\admin\UsersController;
 use App\Http\Controllers\admin\UserStatementController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\verify;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -82,11 +85,27 @@ Route::middleware('auth')->group(function () {
     Route::get('pd1/{id}', [ProductController::class, 'on1'])->name('pd1');
     Route::get('pd2/{id}', [ProductController::class, 'on2'])->name('pd2');
 
+
 //    All Deposit
     Route::get('deposits', [TransactionController::class, 'in'])->name('deposits');
     Route::get('finddeposite', [TransactionController::class, 'index'])->name('finddeposite');
     Route::post('depo', [TransactionController::class, 'finduser'])->name('depo');
 
+//validate transaction
+    Route::view('verifybill', 'check');
+    Route::view('verifydeposit', 'check1');
+    Route::post('check', [verify::class, 'verifypurchase'])->name('check');
+    Route::post('check1', [verify::class, 'verifydeposit'])->name('check1');
+
+
+//    webbook easyaccess
+    Route::get('webbook', [Easy::class, 'webook'])->name('webbook');
+
+
+//    All safelock
+    Route::get('allock', [LockController::class, 'index'])->name('allock');
+    Route::get('com', [LockController::class, 'wi'])->name('com');
+    Route::get('interest', [LockController::class, 'lit'])->name('interest');
 
 });
 
