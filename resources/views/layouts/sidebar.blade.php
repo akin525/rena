@@ -235,6 +235,15 @@
                                     <li><a href="/product2">EASYACCESS</a></li>
                                 </ul>
                             </li>
+                            <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="#">
+                                  <i style="width: 24px; height: 24px" class="fa fa-lock"></i>
+                                    <span>Safe-lock</span></a>
+                                <ul class="sidebar-submenu">
+                                    <li><a href="/allock">All Safelock</a></li>
+                                    <li><a href="/com">Completed Safelock</a></li>
+                                    <li><a href="/interest">Daily Interest</a></li>
+                                </ul>
+                            </li>
                             <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav" href="support-ticket.html">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <g>

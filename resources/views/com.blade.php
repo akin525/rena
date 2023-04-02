@@ -1,20 +1,37 @@
-@include('admin.layouts.sidebar')
-<div class="content">
-    <div class="module">
-        <div class="module-head">
-            <h3>
-                <!--                            My Invoice</h3>-->
-        </div>
-        <div class="content">
-            <div class="module">
-                <div class="module-head">
-                    <div class="card">
-                        <div class="card-body">
-                            <h3>All Complete Safelock</h3>
+@extends("layouts.sidebar")
 
-                            <div class="table-responsive">
-                                <table id="data-table-buttons" class="table table-striped table-bordered align-middle">
-                                    <thead>
+@section('content')
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    <div class="container-fluid">
+        <div class="page-title">
+            <div class="row">
+                <div class="col-12 col-sm-6">
+                    <h3><b>Completed Safelock</b></h3>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"> <a class="home-item" href="{{route('dashboard')}}"><i data-feather="home"></i></a></li>
+                        <li class="breadcrumb-item"> Dashboard</li>
+                        <li class="breadcrumb-item active">Safe-lock</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Container-fluid starts-->
+    <div class="container-fluid user-card">
+        <div class="row">
+        <div class="content">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header pb-0">
+                        <h5>Bills Purchase Table</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
                                     <tr>
                                         <th>Date</th>
                                         <th>Username</th>
@@ -40,8 +57,7 @@
             </div>
         </div>
     </div>
-</div>
-</div>
+@endsection
 
 
 

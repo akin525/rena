@@ -17,7 +17,7 @@ class LockController
 public function index()
 {
     $lock=safe_lock::latest()->paginate(9);
-    return view("admin/allock", compact("lock"));
+    return view("allock", compact("lock"));
 }
 public function interest()
 {
@@ -85,11 +85,11 @@ public function colo()
 public function lit()
 {
     $in=interest::orderBy('id', 'desc')->paginate(30);
-    return view("admin/interest", compact("in"));
+    return view("interest", compact("in"));
 }
 public function wi()
 {
     $wi=wi::orderBy('id', 'desc')->paginate(30);
-        return view("admin/com", compact("wi"));
+        return view("com", compact("wi"));
 }
 }
