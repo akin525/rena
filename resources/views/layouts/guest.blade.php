@@ -5,7 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>Renomobilemoney Admin | Data Refill, Airtime, Cable TV, Electricity Subscription</title>
+
+
+        <!-- Favicons -->
+        <link rel="icon" href="https://renomobilemoney.com/images/bn.jpeg" type="image/png" />
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
