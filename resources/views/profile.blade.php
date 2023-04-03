@@ -29,7 +29,11 @@
                         <div class="profile-img-wrrap"><img class="img-fluid bg-img-cover" src="{{asset('assets/images/user-card/3.jpg')}}" alt=""></div>
                         <div class="userpro-box">
                             <div class="img-wrraper">
+                                @if($user->profile_photo_path==NULL)
                                 <div class="avatar"><img class="img-fluid" alt="" src="{{asset('bn.jpeg')}}"></div><a class="icon-wrapper" href="edit-profile.html"><i class="fa fa-pencil">                              </i></a>
+                                @else
+                                <div class="avatar"><img class="img-fluid" alt="" src="https://renomobilemoney.com/{{$user->profile_photo_path}}"></div><a class="icon-wrapper" href="edit-profile.html"><i class="fa fa-pencil">                              </i></a>
+                                    @endif
                             </div>
                             <div class="user-designation">
                                 <div class="title"><a target="_blank" href="#">

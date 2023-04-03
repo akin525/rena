@@ -26,7 +26,7 @@ $u=User::get();
 //        $users =DB::table('users')
 //            ->join('wallets','users.username','=','users.username')
 //            ->paginate(30);
-        $users=User::with('parentData')->get();
+        $users=User::with('parentData')->paginate(30);
         $wallet = DB::table('wallets')->orderBy('id', 'desc')->get();
 $reseller=DB::table('users')->where("apikey", "!=", "")->count();
         $t_users = DB::table('users')->count();
@@ -37,23 +37,26 @@ $reseller=DB::table('users')->where("apikey", "!=", "")->count();
         $a_users = DB::table('users')->where("role","=","users")->count();
 
 //return $users;
-        return view('admin/users', ['users' => $users, 'res'=>$reseller, 't_users'=>$t_users, 'wallet'=>$wallet, 'f_users'=>$f_users, 'r_users'=>$r_users,'a_users'=>$a_users]);
+        return view('users', ['users' => $users, 'res'=>$reseller, 't_users'=>$t_users, 'wallet'=>$wallet, 'f_users'=>$f_users, 'r_users'=>$r_users,'a_users'=>$a_users]);
+
+    }
+
+    public function resellerall(Request $request)
+    {
+$u=User::where("apikey", "!=", "")->get();
+        return view('reseller', compact('u'));
 
     }
     public function fin()
     {
         $user=User::get();
-        return view('admin/finds', compact('user'));
+        return view('finds', compact('user'));
 
     }
     public function finduser(Request $request){
         $input = $request->all();
         $user_name=encription::encryptdata($input['user_name']);
-        $phoneno=encription::encryptdata($input['phoneno']);
-        $status=$input['status'];
-        $wallet=$input['wallet'];
-        $email=encription::encryptdata($input['email']);
-        $regdate=$input['regdate'];
+
 
         // Instantiates a Query object
         $query = User::Where('username', 'LIKE', "%$user_name%")->with('parentData')->limit(500)
@@ -61,7 +64,7 @@ $reseller=DB::table('users')->where("apikey", "!=", "")->count();
 
         $cquery = User::Where('username', 'LIKE', "%$user_name%")->count();
 
-        return view('admin/finds', ['users' => $query, 'count'=>$cquery, 'result'=>true]);
+        return view('finds', ['users' => $query, 'count'=>$cquery, 'result'=>true]);
     }
     public function profile($username)
     {

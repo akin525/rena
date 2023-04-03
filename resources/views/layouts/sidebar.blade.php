@@ -33,7 +33,8 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors/animate.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors/date-picker.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors/photoswipe.css')}}">
-    <!-- Plugins css Ends-->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors/sweetalert2.css')}}">
+  <!-- Plugins css Ends-->
     <!-- Plugins css start-->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors/scrollbar.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors/datatables.css')}}">
@@ -46,6 +47,7 @@
     <link id="color" rel="stylesheet" href="{{asset('assets/css/color-1.css')}}" media="screen">
     <!-- Responsive css-->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/responsive.css')}}">
+
     @yield('styles')
 </head>
 
@@ -244,15 +246,16 @@
                                     <li><a href="/interest">Daily Interest</a></li>
                                 </ul>
                             </li>
-                            <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav" href="support-ticket.html">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g>
-                                            <g>
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M21.4399 13.9939C18.7789 13.9939 18.7789 9.87952 21.4399 9.87952C21.4399 5.11236 21.4399 3.41089 12.0449 3.41089C2.6499 3.41089 2.6499 5.11236 2.6499 9.87952C5.3109 9.87952 5.3109 13.9939 2.6499 13.9939C2.6499 18.762 2.6499 20.4635 12.0449 20.4635C21.4399 20.4635 21.4399 18.762 21.4399 13.9939Z" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0449 9.17114C11.3619 9.17114 11.2969 10.2606 10.8909 10.6462C10.4839 11.0308 9.22087 10.5912 9.04487 11.2743C8.86987 11.9583 10.0069 12.1904 10.1479 12.7768C10.2879 13.3632 9.59387 14.1875 10.1869 14.5986C10.7809 15.0079 11.4199 14.0804 12.0449 14.0804C12.6699 14.0804 13.3089 15.0079 13.9029 14.5986C14.4969 14.1875 13.8019 13.3632 13.9419 12.7768C14.0829 12.1904 15.2199 11.9583 15.0449 11.2743C14.8689 10.5912 13.6059 11.0308 13.1989 10.6462C12.7929 10.2606 12.7279 9.17114 12.0449 9.17114Z" stroke="#130F26" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                            </g>
-                                        </g>
-                                    </svg><span>Support Ticket</span></a></li>
+                            <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="#">
+                                  <i style="width: 24px; height: 24px" class="fa fa-users"></i>
+                                    <span>Users</span></a>
+                                <ul class="sidebar-submenu">
+                                    <li><a href="/user">All Users</a></li>
+                                    <li><a href="/reseller">All Reseller</a></li>
+                                    <li><a href="/finds">Find User</a></li>
+                                </ul>
+                            </li>
+
                         </ul>
                         <div class="sidebar-img-section">
                             <div class="sidebar-img-content"><img class="img-fluid" src="{{asset('assets/images/side-bar.png')}}" alt="">
@@ -340,4 +343,7 @@
 <script src="{{asset('assets/js/datatable/datatable-extension/dataTables.rowReorder.min.js')}}"></script>
 <script src="{{asset('assets/js/datatable/datatable-extension/dataTables.scroller.min.js')}}"></script>
 <script src="{{asset('assets/js/datatable/datatable-extension/custom.js')}}"></script>
+<script src="{{asset('assets/js/sweet-alert/sweetalert.min.js')}}"></script>
+<script src="{{asset('assets/js/sweet-alert/app.js')}}"></script>
+<!-- Plugins JS Ends-->
 </body>

@@ -4,6 +4,7 @@ use App\Http\Controllers\admin\AdminpdfController;
 use App\Http\Controllers\admin\CandCController;
 use App\Http\Controllers\admin\Easy;
 use App\Http\Controllers\admin\LockController;
+use App\Http\Controllers\admin\McdController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\TransactionController;
 use App\Http\Controllers\admin\UsersController;
@@ -106,6 +107,20 @@ Route::middleware('auth')->group(function () {
     Route::get('allock', [LockController::class, 'index'])->name('allock');
     Route::get('com', [LockController::class, 'wi'])->name('com');
     Route::get('interest', [LockController::class, 'lit'])->name('interest');
+
+//    users route
+    Route::get('user', [UsersController::class, 'index'])->name('user');
+    Route::get('reseller', [UsersController::class, 'resellerall'])->name('reseller');
+    Route::post('finduser', [UsersController::class, 'finduser'])->name('finduser');
+    Route::get('finds', [UsersController::class, 'fin'])->name('finds');
+
+
+//    MCD WITHDRAW
+    Route::post('sub', [McdController::class, 'mcd'])->name('sub');
+    Route::post('verify', [McdController::class, 'verify'])->name('verify');
+    Route::get('mcd', [McdController::class, 'index'])->name('mcd');
+
+
 
 });
 
