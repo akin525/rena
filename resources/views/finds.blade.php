@@ -60,9 +60,9 @@
                         <p class="text-muted mb-4 font-13">Total Result <code>{{$count}}</code></p>
                         @foreach($users as $user)
                         <div class="col-xl-3 xl-40 box-col-5">
-                            <div class="job-sidebar md-sidebar"><a class="btn btn-primary md-sidebar-toggle" href="javascript:void(0)">Knowledge filter</a>
-                                <div class="md-sidebar-aside job-left-aside custom-scrollbar custom-scrollbar">
-                                    <div class="default-according style-1 job-accordion" id="accordionoc">
+                            <div class="job-sidebar md-sidebar">
+                                <div class="">
+                                    <div class="default-according style-1 job-accordion">
                                         <div class="row">
                                             <div class="col-xl-12">
                                                 <div class="card">
