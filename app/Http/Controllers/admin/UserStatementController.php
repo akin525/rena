@@ -8,6 +8,7 @@ use App\Models\deposit;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class UserStatementController extends Controller
 {
@@ -59,5 +60,17 @@ function customerstatementpurchase(Request $request)
     $user=User::all();
 
     return view('statement1',['user' => $user, 'deposit'=>$purchase, 'sum'=>$sum, 'result'=>true]);
+}
+
+function resetoken($request)
+{
+    $newtoken= uniqid('RENO-',true);
+
+    $user = User::where('username', $request)->first();
+    $user->apikey=$newtoken;
+    $user->save();
+    $mg="Apikey Reset Successfully";
+    Alert::success('success', $mg);
+    return back();
 }
 }

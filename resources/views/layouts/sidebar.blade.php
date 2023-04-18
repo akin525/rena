@@ -35,6 +35,8 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors/photoswipe.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors/sweetalert2.css')}}">
   <!-- Plugins css Ends-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.0/dist/sweetalert2.min.css">
+
     <!-- Plugins css start-->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors/scrollbar.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/vendors/datatables.css')}}">
@@ -255,11 +257,21 @@
                                     <li><a href="/finds">Find User</a></li>
                                 </ul>
                             </li>
+                            <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="#">
+                                  <i style="width: 24px; height: 24px" class="fa fa-get-pocket"></i>
+                                    <span>Mcd</span></a>
+                                <ul class="sidebar-submenu">
+                                    <li><a href="/mcdtransaction">All Transaction</a></li>
+                                    <li><a href="/reseller">Withdraw From Mcd</a></li>
+                                    <li><a href="/finds">Withdraw Commission</a></li>
+                                    <li><a href="/service">Check Selling Price</a></li>
+                                </ul>
+                            </li>
 
                         </ul>
                         <div class="sidebar-img-section">
                             <div class="sidebar-img-content"><img class="img-fluid" src="{{asset('assets/images/side-bar.png')}}" alt="">
-                                <h4>Need Help ?</h4><a class="txt" href="https://pixelstrap.freshdesk.com/support/home">Raise ticket at "info@renomobilemoney.com"</a><a class="btn btn-secondary" href="#">Dashboard</a>
+                                <h4>Need Help ?</h4><a class="txt" href="#">Raise ticket at "info@renomobilemoney.com"</a><a class="btn btn-secondary" href="#">Dashboard</a>
                             </div>
                         </div>
                     </div>
@@ -322,6 +334,7 @@
 <script src="{{asset('assets/js/script.js')}}"></script>
 <script src="{{asset('assets/js/theme-customizer/customizer.js')}}"></script>
 <!-- login js-->
+<script src="{{asset('assets/js/datatable/datatables/datatable.custom.js')}}"></script>
 <!-- Plugin used-->
 <script src="{{asset('assets/js/datatable/datatables/jquery.dataTables.min.js')}}"></script>
 <script src="{{asset('assets/js/datatable/datatable-extension/dataTables.buttons.min.js')}}"></script>
@@ -346,4 +359,6 @@
 <script src="{{asset('assets/js/sweet-alert/sweetalert.min.js')}}"></script>
 <script src="{{asset('assets/js/sweet-alert/app.js')}}"></script>
 <!-- Plugins JS Ends-->
+{{--<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.0/dist/sweetalert2.min.js"></script>--}}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>

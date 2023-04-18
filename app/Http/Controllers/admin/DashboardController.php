@@ -132,7 +132,6 @@ public function mcdtran()
 
         $resellerURL = 'https://integration.mcd.5starcompany.com.ng/api/reseller/';
 
-
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
@@ -155,10 +154,10 @@ public function mcdtran()
         $response = curl_exec($curl);
 
         curl_close($curl);
-//echo $response;
         $data = json_decode($response, true);
         $success = $data["data"];
-        return view('admin/mcdtransaction', compact('success' ));
+
+        return view('mcdtransaction', compact('success' ));
 
     }
     return redirect("admin/login")->with('status', 'You are not allowed to access');

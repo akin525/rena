@@ -44,37 +44,45 @@
                             <h6>PHONE: {{\App\Console\encription::decryptdata($user->phone)}}</h6>
 
                         </div>
-                    <button class="btn btn-warning sweet-5" type="button" onclick="_gaq.push(['_trackEvent', 'example', 'try', 'sweet-5']);">Warning alert</button>
-
                     <a href="admin/profile/{{ $user->username }}" class="btn btn-sm btn-success"><i class="fa fa-edit"></i></a>
-{{--                    <a href="delete/{{ $user->id}}" class="btn btn-sm btn-danger"><i class="fa fa-recycle"></i></a>--}}
-                    <button type="button" class="btn btn-sm btn-danger" onclick="onPick"><i class="fa fa-recycle"></i></button>
-
+                    <a href="delete/{{ $user->id}}" class="btn btn-sm btn-danger"><i class="fa fa-recycle"></i></a>
+{{--                    <button class="btn btn-sm btn-danger" id="my-button"><i class="fa fa-recycle"></i></button>--}}
+{{--                    <button id="my-button" onclick="confirmDelete()">Delete</button>--}}
+{{----}}
+                    <script>
+                        function confirmDelete() {
+                            swal({
+                                title: 'Are you sure?',
+                                text: "You won't be able to revert this!",
+                                type: 'warning',
+                                showCancelButton: true,
+                                cancelButtonClass: 'btn btn-danger',
+                                confirmButtonText: 'Yes, delete it!'
+                            });
+                        }
+                    </script>
                 </div>
             </div>
             @endforeach
             {{$users->links()}}
-            <script>
-                const onPick = value => {
-                    swal({
-                            title: "Are you sure?",
-                            text: "Once deleted, you will not be able to recover this imaginary file!",
-                            icon: "warning",
-                            buttons: true,
-                            dangerMode: true,
-                        })
-                            .then((willDelete) => {
-                                if (willDelete) {
-                                    swal("Poof! Your imaginary file has been deleted!", {
-                                        icon: "success",
-                                    });
-                                } else {
-                                    swal("Your imaginary file is safe!");
-                                }
-                            })
-                    }
 
-            </script>
+
         </div>
     </div>
+@endsection
+@section('script')
+    <script>
+        const myButton = document.getElementById('my-button');
+
+        myButton.add EventListener('click', () => {
+            swal({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                type: 'warning',
+                showCancelButton: true,
+                cancelButtonClass: 'btn btn-danger',
+                confirmButtonText: 'Yes, delete it!'
+            })
+        });
+    </script>
 @endsection

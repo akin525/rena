@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\admin\AdminpdfController;
 use App\Http\Controllers\admin\CandCController;
+use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\Easy;
 use App\Http\Controllers\admin\LockController;
 use App\Http\Controllers\admin\McdController;
@@ -113,12 +114,17 @@ Route::middleware('auth')->group(function () {
     Route::get('reseller', [UsersController::class, 'resellerall'])->name('reseller');
     Route::post('finduser', [UsersController::class, 'finduser'])->name('finduser');
     Route::get('finds', [UsersController::class, 'fin'])->name('finds');
+    Route::get('resetpin/{id}', [UserStatementController::class, 'resetoken'])->name('resetpin');
+
 
 
 //    MCD WITHDRAW
     Route::post('sub', [McdController::class, 'mcd'])->name('sub');
     Route::post('verify', [McdController::class, 'verify'])->name('verify');
     Route::get('mcd', [McdController::class, 'index'])->name('mcd');
+    Route::post('ser', [\App\Http\Controllers\listdata::class, 'list'])->name('ser');
+    Route::get('mcdtransaction', [DashboardController::class, 'mcdtran'])->name('mcdtransaction');
+    Route::view('service', 'service');
 
 
 

@@ -46,7 +46,7 @@
                     <a href="admin/profile/{{ $user->username }}" class="btn btn-sm btn-success"><i class="fa fa-edit"></i></a>
 {{--                    <a href="delete/{{ $user->id}}" class="btn btn-sm btn-danger"><i class="fa fa-recycle"></i></a>--}}
                     <button type="button" class="btn btn-sm btn-info" onclick="onPick">Block Reseller</button>
-                    <button type="button" class="btn btn-sm btn-warning" onclick="onPick">Reset Key</button>
+                    <a href="resetpin/{{$user->username}}" class="badge badge-success">Reset Key</a>
 
                 </div>
             </div>
